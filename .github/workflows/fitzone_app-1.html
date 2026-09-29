@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>FITZONE — Фитнес-клуб</title>
+<style>
+:root{--bg:#08090a;--panel:#141516;--lime:#c9ff19;--text:#f5f5f5;--muted:#929292}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--text);font-family:Arial,Helvetica,sans-serif}
+a{text-decoration:none;color:inherit}.container{width:min(1160px,calc(100% - 36px));margin:auto}
+header{height:74px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid #181a1b}
+.logo{font-size:28px;font-weight:900;font-style:italic}.logo span{color:var(--lime)}
+nav{display:flex;gap:30px;font-size:12px;font-weight:700;color:#ddd}nav a:first-child{color:var(--lime)}
+.btn{border:1px solid var(--lime);background:var(--lime);color:#111;font-weight:900;padding:14px 22px;border-radius:4px;cursor:pointer}
+.btn.outline{background:transparent;color:var(--lime)}
+.hero{min-height:470px;display:flex;align-items:center;position:relative;overflow:hidden}
+.hero:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,#08090a 0%,rgba(8,9,10,.92) 35%,rgba(8,9,10,.2) 70%,rgba(8,9,10,.55));pointer-events:none}
+.hero-bg{position:absolute;right:-5%;top:0;width:65%;height:100%;object-fit:cover;opacity:.8}
+.hero-content{position:relative;z-index:2;width:560px;padding:65px 0}
+.kicker{color:var(--lime);font-weight:800;letter-spacing:1px}.hero h1{font-size:58px;line-height:.98;margin:12px 0 22px;text-transform:uppercase}
+.hero h1 span{color:var(--lime)}.hero p{color:#aaa;line-height:1.55;max-width:450px}
+.actions{display:flex;gap:14px;margin-top:25px}
+.features{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:-8px;position:relative;z-index:3}
+.feature{background:#111314;border:1px solid #1d1f20;border-radius:10px;padding:24px}.icon{font-size:30px;color:var(--lime)}.feature h3{font-size:14px;margin:12px 0 7px}.feature p,.card p,.trainer p{font-size:12px;color:#888;line-height:1.45}
+section{padding:72px 0}.section-title{text-align:center;margin-bottom:34px}.section-title h2{font-size:34px;margin:0 0 8px;text-transform:uppercase}.section-title p{color:#888}
+.cards{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}.card{background:#151718;border-radius:10px;overflow:hidden;border:1px solid #202223}.card-img{height:180px;background:#242526;display:flex;align-items:center;justify-content:center;font-size:70px}.card-body{padding:18px}.card h3{margin:0;text-transform:uppercase;font-size:16px}.more{color:var(--lime);font-size:12px;font-weight:800}
+.trainers{background:#111314;padding:34px;border-radius:12px}.trainer-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:15px}.trainer{background:#191b1c;padding:16px;border-radius:8px}.avatar{height:125px;border-radius:7px;background:linear-gradient(145deg,#3b3b3b,#111);display:flex;align-items:center;justify-content:center;font-size:54px}.trainer h3{font-size:13px;margin-bottom:5px}
+.cta{margin-top:40px;padding:42px;background:linear-gradient(90deg,#17191a,#0d0e0f);border-radius:12px;display:flex;justify-content:space-between;align-items:center}.cta h2{margin:0;font-size:28px;text-transform:uppercase}.cta span{color:var(--lime)}
+footer{border-top:1px solid #1d1e1f;padding:40px 0;color:#777;font-size:12px}.foot{display:flex;justify-content:space-between;gap:30px}.toast{position:fixed;bottom:22px;left:50%;transform:translateX(-50%) translateY(100px);background:var(--lime);color:#111;padding:13px 20px;border-radius:8px;font-weight:800;transition:.3s;z-index:10}.toast.show{transform:translateX(-50%) translateY(0)}
+@media(max-width:850px){nav{display:none}.hero{min-height:620px}.hero-bg{width:100%;opacity:.35}.hero h1{font-size:43px}.features,.cards,.trainer-grid{grid-template-columns:repeat(2,1fr)}.cta{flex-direction:column;align-items:flex-start;gap:22px}}
+@media(max-width:520px){.container{width:min(100% - 24px,1160px)}header{height:64px}.logo{font-size:23px}.hero-content{padding:50px 0}.hero h1{font-size:38px}.actions{flex-direction:column}.actions .btn{width:100%}.features,.cards,.trainer-grid{grid-template-columns:1fr}.feature{padding:18px}section{padding:50px 0}.cta{padding:28px}.cta h2{font-size:22px}.foot{flex-direction:column}}
+</style>
+</head>
+<body>
+<header>
+  <div class="container" style="display:flex;align-items:center;justify-content:space-between;width:100%">
+    <div class="logo">FIT<span>ZONE</span></div>
+    <nav><a href="#home">ГЛАВНАЯ</a><a href="#about">О НАС</a><a href="#programs">ПРОГРАММЫ</a><a href="#trainers">ТРЕНЕРЫ</a><a href="#blog">БЛОГ</a><a href="#contacts">КОНТАКТЫ</a></nav>
+    <button class="btn" onclick="join()">ПЕРВОЕ ЗАНЯТИЕ БЕСПЛАТНО</button>
+  </div>
+</header>
+
+<main id="home">
+<section class="hero">
+  <div class="container">
+    <img class="hero-bg" alt="" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='900' height='600'%3E%3Crect width='100%25' height='100%25' fill='%23272a2b'/%3E%3Ccircle cx='65%25' cy='40%25' r='180' fill='%23383b3c'/%3E%3Crect x='48%25' y='62%25' width='44%25' height='8' rx='4' fill='%23606060' transform='rotate(-8 50 50)'/%3E%3C/svg%3E">
+    <div class="hero-content">
+      <div class="kicker">FITZONE</div>
+      <h1>СТАНЬ ЛУЧШЕЙ<br><span>ВЕРСИЕЙ СЕБЯ</span></h1>
+      <p>Современный фитнес-клуб для тех, кто стремится к здоровью, силе и уверенности каждый день.</p>
+      <div class="actions"><button class="btn" onclick="join()">ПЕРВОЕ ЗАНЯТИЕ БЕСПЛАТНО</button><button class="btn outline" onclick="document.querySelector('#programs').scrollIntoView()">УЗНАТЬ БОЛЬШЕ</button></div>
+    </div>
+  </div>
+</section>
+
+<div class="container features" id="about">
+  <div class="feature"><div class="icon">🏋</div><h3>СОВРЕМЕННОЕ ОБОРУДОВАНИЕ</h3><p>Премиальные тренажёры и всё необходимое для эффективных тренировок.</p></div>
+  <div class="feature"><div class="icon">♙</div><h3>ОПЫТНЫЕ ТРЕНЕРЫ</h3><p>Профессиональная команда поможет достичь ваших целей.</p></div>
+  <div class="feature"><div class="icon">▣</div><h3>ИНДИВИДУАЛЬНЫЕ ПРОГРАММЫ</h3><p>Персональные планы тренировок и питания под ваши результаты.</p></div>
+  <div class="feature"><div class="icon">♡</div><h3>ЗАБОТА О ЗДОРОВЬЕ</h3><p>Поддержка на каждом этапе вашего преображения.</p></div>
+</div>
+
+<section id="programs"><div class="container">
+  <div class="section-title"><h2>ПРОГРАММЫ</h2><p>Выбери направление, которое подходит именно тебе</p></div>
+  <div class="cards">
+    <article class="card"><div class="card-img">🏋️</div><div class="card-body"><h3>Силовые тренировки</h3><p>Увеличивай силу, набирай мышечную массу и улучшай физическую форму.</p><a class="more" href="#" onclick="details('Силовые тренировки');return false">ПОДРОБНЕЕ →</a></div></article>
+    <article class="card"><div class="card-img">🏃</div><div class="card-body"><h3>Кардио тренировки</h3><p>Сжигай калории, улучшай выносливость и поддерживай сердце в тонусе.</p><a class="more" href="#" onclick="details('Кардио тренировки');return false">ПОДРОБНЕЕ →</a></div></article>
+    <article class="card"><div class="card-img">🧘</div><div class="card-body"><h3>Функциональные тренировки</h3><p>Развивай гибкость, координацию и силу с помощью комплексных упражнений.</p><a class="more" href="#" onclick="details('Функциональные тренировки');return false">ПОДРОБНЕЕ →</a></div></article>
+    <article class="card"><div class="card-img">🥗</div><div class="card-body"><h3>Питание и консультации</h3><p>Персональные рекомендации по питанию для достижения максимальных результатов.</p><a class="more" href="#" onclick="details('Питание и консультации');return false">ПОДРОБНЕЕ →</a></div></article>
+  </div>
+</div></section>
+
+<section id="trainers"><div class="container trainers">
+  <div class="section-title"><h2>НАШИ ТРЕНЕРЫ</h2><p>Профессионалы, которые помогут тебе достичь целей</p></div>
+  <div class="trainer-grid">
+    <div class="trainer"><div class="avatar">👨🏻</div><h3>ИВАН ПЕТРОВ</h3><p>Силовой тренер<br>Опыт: 8 лет</p></div>
+    <div class="trainer"><div class="avatar">👩🏻</div><h3>АННА СМИРНОВА</h3><p>Тренер по функциональному тренингу<br>Опыт: 6 лет</p></div>
+    <div class="trainer"><div class="avatar">👨🏽</div><h3>АЛЕКСЕЙ КОРОЛЁВ</h3><p>Кардио тренер<br>Опыт: 7 лет</p></div>
+    <div class="trainer"><div class="avatar">👩🏼</div><h3>МАРИЯ ЗАЙЦЕВА</h3><p>Нутрициолог<br>Опыт: 5 лет</p></div>
+  </div>
+</div></section>
+
+<div class="container cta" id="contacts"><div><h2>ГОТОВ НАЧАТЬ СВОЙ<br>ПУТЬ К <span>ЛУЧШЕЙ ВЕРСИИ СЕБЯ?</span></h2><p style="color:#888">Запишись на первое занятие прямо сейчас и сделай шаг к новому себе!</p></div><button class="btn" onclick="join()">ЗАПИСАТЬСЯ БЕСПЛАТНО</button></div>
+</main>
+
+<footer><div class="container foot"><div class="logo">FIT<span>ZONE</span></div><div>© 2024 FITZONE. Все права защищены.</div><div>Ул. Фитнеса, 10 · +7 (999) 123-45-67</div></div></footer>
+<div class="toast" id="toast"></div>
+<script>
+function toast(t){let x=document.getElementById('toast');x.textContent=t;x.classList.add('show');setTimeout(()=>x.classList.remove('show'),2200)}
+function join(){toast('Заявка на бесплатное занятие открыта! 💚')}
+function details(n){toast(n+' — программа выбрана')}
+</script>
+</body>
+</html>
